@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+        "commit": "cz",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
@@ -13,11 +14,17 @@
         "@tailwindcss/ui": "^0.6.0",
         "axios": "^0.19",
         "cross-env": "^7.0",
+        "cz-conventional-changelog": "^3.3.0",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.19",
         "postcss-import": "^12.0.1",
         "resolve-url-loader": "^3.1.0",
         "tailwindcss": "^1.8.0",
         "vue-template-compiler": "^2.6.12"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }
