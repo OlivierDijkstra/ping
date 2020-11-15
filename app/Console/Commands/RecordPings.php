@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use App\Jobs\PerformPing;
 use App\Models\Domain;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 
 class RecordPings extends Command
 {
@@ -43,9 +42,7 @@ class RecordPings extends Command
         $domains = Domain::all();
 
         foreach ($domains as $domain) {
-            $response = PerformPing::dispatch($domain);
-
-            Log::info('created new ping '.collect($response)->toArray());
+            PerformPing::dispatch($domain);
         }
 
         return 0;
