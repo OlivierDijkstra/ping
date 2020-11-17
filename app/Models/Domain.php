@@ -17,4 +17,12 @@ class Domain extends Model
     {
         return $this->hasMany(Ping::class);
     }
+
+    public function uptime()
+    {
+        $totalPings = $this->pings()->count();
+        $goodPings = $this->pings()->whereStatus(200)->count();
+
+        return $goodPings / $totalPings * 100;
+    }
 }
