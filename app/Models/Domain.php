@@ -23,6 +23,6 @@ class Domain extends Model
         $totalPings = $this->pings()->count();
         $goodPings = $this->pings()->whereStatus(200)->count();
 
-        return $goodPings / $totalPings * 100;
+        return round($goodPings / $totalPings * 100, 2);
     }
 }
