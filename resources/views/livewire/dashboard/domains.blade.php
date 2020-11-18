@@ -31,7 +31,9 @@
                 @endif
             </div>
 
-            <div class="w-1/5 flex justify-between items-center">   
+            <div class="w-1/6 flex justify-between items-center">  
+                <a href="{{ url('/dashboard/overview/' . $domain->id) }}" class="text-sm text-gray-400 underline">{{ __('Overview') }}</a> 
+
                 <x-jet-danger-button wire:click="openDeleteModal({{ $domain->id }})">
                     x
                 </x-jet-danger-button>

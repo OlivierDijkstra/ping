@@ -28,7 +28,6 @@
     },
     "dependencies": {
         "alpinejs": "^2.7.3",
-        "apexcharts": "^3.22.2",
         "cz-gitmoji": "0.0.7"
     }
 }
