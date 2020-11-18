@@ -1,4 +1,4 @@
-<div>
+<div wire:poll.keep-alive.60s>
     @foreach ($domains as $domain)
         <div class="flex justify-between items-center m-2 px-5 py-4 rounded-md bg-gray-700">
             <div class="w-1/5">
