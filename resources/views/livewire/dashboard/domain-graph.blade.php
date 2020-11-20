@@ -39,6 +39,13 @@
                         xPadding: 10,
                         yPadding: 10,
                         displayColors: false,
+                        callbacks: {
+                            label: (item) => {
+                                item.value = `Latency: ${item.value}s`
+
+                                return item.value
+                            }
+                        }
                     },
                     scales: {
                         yAxes: [{
@@ -59,10 +66,6 @@
                     }
 
                 }
-
-
-                console.log(data)
-
 
                 return data
             })

@@ -27,6 +27,6 @@ class LatencyChart extends BaseChart
  
         return Chartisan::build()
             ->labels($pings->pluck('created_at')->toArray())
-            ->dataset('Latency (in seconds)', $pings->pluck('latency')->toArray());
+            ->dataset('Latency', $pings->pluck('latency')->toArray());
     }
 }
