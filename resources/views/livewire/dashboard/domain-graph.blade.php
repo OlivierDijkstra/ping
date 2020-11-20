@@ -44,6 +44,9 @@
                                 item.value = `Latency: ${item.value}s`
 
                                 return item.value
+                            },
+                            labelTextColor: () => {
+                                return '#ACACAC'
                             }
                         }
                     },
