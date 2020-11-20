@@ -3,6 +3,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-gray-900 overflow-hidden shadow-xl sm:rounded-lg p-4">
                 @livewire('dashboard.back-to-domain-button')
+
+                @livewire('dashboard.domain-graph', ['id' => $domain->id])
             </div>
         </div>
     </div>

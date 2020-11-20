@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DomainController;
+use App\Models\Domain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('domain', DomainController::class)->middleware('auth:sanctum');
+
+Route::get('/domains/{domain}/pings', function(Domain $domain) {
+    return $domain->pings()->latest()->limit(60)->get(['status', 'latency', 'created_at']);
+})->name('domain.pings');

@@ -19,7 +19,6 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
 </head>
 
 <body class="font-sans antialiased bg-black text-gray-300">
@@ -35,6 +34,14 @@
     @stack('modals')
 
     @livewireScripts
+    <!-- Charting library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@0.1.1"></script>
+    <!-- Chartisan -->
+    <script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script>
+
+    @stack('scripts')
 </body>
 
 </html>
