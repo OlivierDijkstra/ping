@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\DomainController;
-use App\Models\Domain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
