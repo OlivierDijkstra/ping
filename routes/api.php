@@ -21,7 +21,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('domain', DomainController::class)->middleware('auth:sanctum');
-
-Route::get('/domains/{domain}/pings', function(Domain $domain) {
-    return $domain->pings()->latest()->limit(60)->get(['status', 'latency', 'created_at']);
-})->name('domain.pings');
