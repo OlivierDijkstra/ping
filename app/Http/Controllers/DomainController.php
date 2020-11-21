@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDomainRequest;
+use App\Http\Requests\UpdateDomainRequest;
 use App\Models\Domain;
-use Illuminate\Http\Request;
 
 class DomainController extends Controller
 {
@@ -53,9 +53,13 @@ class DomainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateDomainRequest $request, Domain $domain)
     {
-        //
+        $domain->update([
+            'host' => $request->host,
+        ]);
+
+        return response()->json($domain);
     }
 
     /**
