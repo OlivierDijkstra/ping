@@ -1,4 +1,4 @@
-<div wire:poll.keep-alive.60s>
+<div>
     @foreach ($domains as $domain)
         <div class="flex justify-between items-center m-2 px-5 py-4 rounded-md bg-gray-700">
             <div class="w-1/5">
@@ -24,9 +24,12 @@
                     @endif
 
                     <p class="text-gray-300"> {{ $domain->pings()->latest()->first()->latency }}s </p>
+
+                    <p class="text-gray-300"> {{ $domain->pings()->latest()->first()->created_at->diffForHumans() }} </p>
                 @else
                     <p class="rounded-lg px-2 py-1 bg-blue-300 text-blue-600 text-sm">...</p>
                     <p class="rounded-lg px-2 py-1 bg-blue-300 text-blue-600 text-sm">...</p>
+                    <p class="text-gray-300 text-sm">...</p>
                     <p class="text-gray-300 text-sm">...</p>
                 @endif
             </div>
