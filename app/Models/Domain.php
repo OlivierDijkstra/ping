@@ -25,4 +25,9 @@ class Domain extends Model
 
         return round($goodPings / $totalPings * 100, 2);
     }
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }

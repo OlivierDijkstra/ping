@@ -29,5 +29,7 @@ Route::prefix('dashboard')
             return view('dashboard.overview', [
                 'domain' => $domain,
             ]);
-        })->name('dashboard.overview');
+        })
+        ->middleware('can:view,domain')
+        ->name('dashboard.overview');
     });
