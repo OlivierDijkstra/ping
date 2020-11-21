@@ -31,8 +31,10 @@
                 @endif
             </div>
 
-            <div class="w-1/6 flex justify-between items-center">  
-                <a href="{{ url('/dashboard/overview/' . $domain->id) }}" class="text-sm text-gray-400 underline">{{ __('Overview') }}</a> 
+            <div class="w-1/6 flex justify-between items-center">
+                @livewire('dashboard.overview-button', [
+                    'domainId' => $domain->id
+                ])
 
                 <x-jet-danger-button wire:click="openDeleteModal({{ $domain->id }})">
                     x
